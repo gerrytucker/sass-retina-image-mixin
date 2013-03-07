@@ -1,0 +1,17 @@
+@mixin retina-image($image-x1, $image-x2, $width-x1, $height-x1) {
+	background-image: url($image-x1);
+	
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background: {
+			image: url("$image-x2");
+			size: $width-x1 $height-x1;
+		}
+  }
+
+}
